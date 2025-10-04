@@ -2,33 +2,43 @@
 
 ```
 project/
+
+│──backend/
 │
-├── backend/
-│   ├── controllers/          # Controller functions for handling business logic
-│   │   ├── authController.js
-│   │   ├── expenseController.js
-│   │   └── userController.js
-│   ├── models/               # Database models
-│   │   ├── Company.js
-│   │   └── User.js
-│   ├── routes/               # API route definitions
-│   │   ├── authRoutes.js
-│   │   ├── expenseRoutes.js
-│   │   └── userRoutes.js
-│   ├── middleware/           # Middleware (auth and role-based access)
-│   │   ├── auth.js
-│   │   └── role.js
-│   ├── config/               # Configurations for DB and environment variables
-│   │   ├── db.js
-│   │   └── config.js
-│   ├── controllers/          # Controller functions for handling business logic
-│   │   ├── authController.js
-│   │   ├── expenseController.js
-│   │   └── userController.js
-│   ├── server.js             # Express server entry point
-│   ├── .env                  # Environment variables (JWT_SECRET, DB_URI)
-│   └── package.json          # Backend dependencies
+├── src/                              # Your source code
+│   ├── functions/                    # All serverless functions (Lambda functions)
+│   │   ├── auth/                     # Auth-related Lambda functions
+│   │   │   ├── signUp.js             # Lambda for handling user signup
+│   │   │   ├── login.js              # Lambda for handling user login
+│   │   │   └── roleCheck.js          # Lambda for role-based access check
+│   │   │
+│   │   ├── expenses/                 # Expense-related Lambda functions
+│   │   │   ├── submitExpense.js      # Lambda for submitting expenses
+│   │   │   ├── approveExpense.js     # Lambda for approving expenses
+│   │   │   └── getExpenses.js        # Lambda for fetching expenses
+│   │   │
+│   │   └── users/                    # User management-related Lambdas
+│   │       ├── getUsers.js           # Lambda for fetching users
+│   │       └── updateUserRole.js     # Lambda for updating user roles
+│   │
+│   ├── utils/                        # Shared utility functions
+│   │   ├── db.js                     # Database connection logic (e.g., MongoDB or DynamoDB)
+│   │   ├── jwt.js                    # Utility for handling JWT tokens
+│   │   └── currencyConverter.js      # Utility for handling currency conversion logic
+│   │
+│   ├── config/                       # Configuration files for serverless functions
+│   │   ├── serverless.yml            # Serverless framework configuration
+│   │   ├── env.js                    # Environment variables and configuration
+│   │   └── dbConfig.js               # Database configuration for serverless DB connections
+│   │
+├── tests/                            # Unit and integration tests for Lambdas
+│   ├── auth.test.js                  # Tests for auth-related Lambda functions
+│   ├── expenses.test.js              # Tests for expense-related Lambdas
+│   └── users.test.js                 # Tests for user-related Lambdas
 │
+├── package.json                      # Node.js dependencies for the backend
+└── README.md                         # Project documentation
+
 ├── frontend/
 │   ├── src/
 │   │   ├── assets/           # Static assets like images, icons, fonts
