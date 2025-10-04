@@ -1,5 +1,7 @@
 # Expense Manager (MERN + Tailwind)
 
+
+
 [![Node.js](https://img.shields.io/badge/node-%3E%3D18-brightgreen.svg)](https://nodejs.org)
 [![React](https://img.shields.io/badge/react-18-61dafb.svg?logo=react&logoColor=white)](https://react.dev)
 [![Express](https://img.shields.io/badge/express-4-black.svg)](https://expressjs.com)
@@ -8,6 +10,10 @@
 [![TailwindCSS](https://img.shields.io/badge/tailwindcss-3-38B2AC.svg?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 
 A full-stack expense management system purpose-built for hackathons and rapid development. It supports company bootstrap on signup, role-based access (Admin, Manager, Employee), multi-step and conditional approval flows (percentage, specific approver, hybrid), receipts OCR, currency conversion with caching, dashboards per role, and a complete admin override + history view.
+## 🚀 Live Demo
+
+- **Frontend:** [View Frontend](https://expensemanager012.netlify.app/)  
+- **Backend API:** [View Backend](https://odoo-hacathon2025-expens-management.onrender.com)
 
 
 ## Table of Contents
